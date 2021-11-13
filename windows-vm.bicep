@@ -1,3 +1,4 @@
+param DefaultUser string
 resource windowsVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
   name: 'name'
   location: resourceGroup().location
@@ -7,7 +8,7 @@ resource windowsVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
     }
     osProfile: {
       computerName: 'computerName'
-      adminUsername: 'adminUsername'
+      adminUsername: DefaultUser
       adminPassword: 'adminPassword'
     }
     storageProfile: {
